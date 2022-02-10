@@ -1,8 +1,6 @@
-# C Boilerplate
+# push_swap
 
-This is a C Boilerplate for my future C projects on Codam. This boilerplate allows me to start projects swiftly with a pre-made template.
-
-To use this boilerplate, simply edit the basic configuration in the Makefile and add your files to the SOURCE_FILES list. After that, run the ’all‘ command.
+This project will sort data on a stack, with a limited set of instructions, using the lowest possible number of actions. For this project, you have to manipulate various types of algorithms and choose the one (of many) most appropriate solution for an optimized data sorting.
 
 ## Requirements
 
