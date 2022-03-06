@@ -6,22 +6,22 @@
 /*   By: navi <navi@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/03/06 13:52:24 by navi          #+#    #+#                 */
-/*   Updated: 2022/03/06 16:45:07 by navi          ########   odam.nl         */
+/*   Updated: 2022/03/06 16:54:35 by navi          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
 /**
- * Push the stack *entry at int pos in push_swap->stack
+ * Push the stack *entry at int pos in t_stack->stack
  *
- * @param   t_push_swap	push_swap
+ * @param   t_stack		stack
  * @param   t_stack		entry
  * @param   int  		pos
  *
  * @return  int
  */
-int	stack_push(t_push_swap *push_swap, t_stack *entry, int pos)
+int	stack_push(t_push_swap *push_swap, t_stack *stack, t_stack *entry, int pos)
 {
 
 }
@@ -34,7 +34,7 @@ int	stack_push(t_push_swap *push_swap, t_stack *entry, int pos)
  *
  * @return  int
  */
-int	stack_pop(t_push_swap *push_swap, int pos)
+int	stack_pop(t_push_swap *push_swap, t_stack *stack, int pos)
 {
 
 }
