@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_example.h                                       :+:    :+:            */
+/*   stack_debug.c                                      :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: nismail <nismail@student.codam.nl>           +#+                     */
+/*   By: navi <navi@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/11/23 00:27:03 by nismail       #+#    #+#                 */
-/*   Updated: 2022/01/20 12:42:12 by nismail       ########   odam.nl         */
+/*   Created: 2022/03/06 14:05:54 by navi          #+#    #+#                 */
+/*   Updated: 2022/03/06 16:46:19 by navi          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_EXAMPLE_H
-# define FT_EXAMPLE_H
+#include <push_swap.c>
 
-# include <libft.h>
-
-#endif
+/**
+ * Print the stack
+ *
+ * @return  void
+ */
+void	stack_debug_print(t_stack *stack)
+{
+	
+}

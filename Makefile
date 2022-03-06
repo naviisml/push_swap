@@ -1,4 +1,4 @@
-NAME = program
+NAME = push_swap
 
 AR = @ar
 AR_FLAGS = -rcs
@@ -14,7 +14,8 @@ LIBFT_FOLDER	=	./libraries/libft
 
 # Source Files...
 SOURCE_FOLDER	=	./srcs
-SOURCE_FILES	=	ft_example.c
+SOURCE_FILES	=	stack_debug.c \
+					push_swap.c
 
 # Build Folder
 BUILD_FOLDER	=	./build
@@ -49,10 +50,12 @@ all: $(NAME)
 
 # Remove the `object` folder and files...
 clean:
+	@$(MAKE) clean -C $(LIBFT_FOLDER)
 	@rm -rf $(OBJECT_FILES) $(OBJECT_FOLDER)
 
 # Remove the `object` and `build` folder and files...
 fclean: clean
+	@$(MAKE) fclean -C $(LIBFT_FOLDER)
 	@rm -rf $(NAME)
 
 # Clean the program up and re-compile it...
