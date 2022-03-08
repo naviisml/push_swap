@@ -6,7 +6,7 @@
 /*   By: navi <navi@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/03/06 13:52:24 by navi          #+#    #+#                 */
-/*   Updated: 2022/03/06 16:54:35 by navi          ########   odam.nl         */
+/*   Updated: 2022/03/08 17:31:57 by navi          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,35 @@
  *
  * @return  int
  */
-int	stack_push(t_push_swap *push_swap, t_stack *stack, t_stack *entry, int pos)
+int	stack_push(t_push_swap *push_swap, t_stack **stack, t_stack *entry)
 {
+	t_stack	*last_item;
+	int		n;
 
+	if (stack && entry)
+	{
+		if (*stack == NULL)
+		{
+			*stack = entry;
+		}
+		else
+		{
+			n = push_swap->entries;
+			entry->next = *stack;
+			last_item = *stack;
+			while (n > 0)
+			{
+				if (last_item->next)
+					last_item = last_item->next;
+				else
+					break ;
+				n--;
+			}
+			last_item->next = entry;
+		}
+	}
+	push_swap->entries += 1;
+	return (0);
 }
 
 /**
@@ -34,17 +60,29 @@ int	stack_push(t_push_swap *push_swap, t_stack *stack, t_stack *entry, int pos)
  *
  * @return  int
  */
-int	stack_pop(t_push_swap *push_swap, t_stack *stack, int pos)
+int	stack_pop(t_push_swap *push_swap, t_stack **stack, int pos)
 {
-
+	(void)push_swap;
+	(void)stack;
+	(void)pos;
+	return (0);
 }
 
 /**
- * Free the stack starting from t_stack *entry
+ * Create a new t_stack struct
  *
- * @return  void
+ * @param   int      nbr
+ *
+ * @return  t_stack
  */
-void	stack_free(t_push_swap *push_swap, t_stack *entry)
+t_stack	*stack_create_item(int nbr)
 {
+	t_stack	*item;
 
+	item = (t_stack *)malloc(sizeof(t_stack));
+	if (!item)
+		return (0);
+	item->value = nbr;
+	item->next = NULL;
+	return (item);
 }

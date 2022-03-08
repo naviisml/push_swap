@@ -18,6 +18,7 @@ LIBFT_FOLDER	=	./libraries/libft
 SOURCE_FOLDER	=	./srcs
 SOURCE_FILES	=	utils/error.c \
 					utils/stack_debug.c \
+					utils/stack.c \
 					push_swap.c
 
 # Build Folder
