@@ -6,7 +6,7 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:26:25 by nismail       #+#    #+#                 */
-/*   Updated: 2022/03/08 18:06:02 by navi          ########   odam.nl         */
+/*   Updated: 2022/03/08 18:09:05 by navi          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ static void stack_initialize(t_push_swap *push_swap, char **lst, int n)
 			new_stack = stack_create_item(nbr);
 			if (!new_stack)
 				error("Memory error!");
-			stack_push(push_swap, &push_swap->stack_a, new_stack, push_swap->entries);
+			stack_push(push_swap, &push_swap->stack_a, new_stack, i);
 		}
 		else
 		{
@@ -59,10 +59,6 @@ static void stack_initialize(t_push_swap *push_swap, char **lst, int n)
 		}
 		i++;
 	}
-	new_stack = stack_create_item(10);
-	if (!new_stack)
-		error("Memory error!");
-	stack_push(push_swap, &push_swap->stack_a, new_stack, 3);
 }
 
 /**
