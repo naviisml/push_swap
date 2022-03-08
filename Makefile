@@ -8,13 +8,16 @@ COMPILER_FLAGS = -Wall -Werror -Wextra -Iincludes/
 
 # Configuration
 
+TEST_COMMAND	=	./push_swap 2 1 3 6 5 8
+
 # Libft...
 LIBFT			=	libft.a
 LIBFT_FOLDER	=	./libraries/libft
 
 # Source Files...
 SOURCE_FOLDER	=	./srcs
-SOURCE_FILES	=	stack_debug.c \
+SOURCE_FILES	=	utils/error.c \
+					utils/stack_debug.c \
 					push_swap.c
 
 # Build Folder
@@ -63,5 +66,5 @@ re: fclean all
 
 # Re-compile the program and run the script...
 dev: re
-	@echo "Running \t$(NAME)..."
-	@./$(NAME)
+	@echo "Running \t[$(TEST_COMMAND)]..."
+	@$(TEST_COMMAND)
