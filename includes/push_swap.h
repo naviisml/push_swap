@@ -21,7 +21,7 @@ typedef struct s_stack		t_stack;
 int		stack_push(t_push_swap *ps, t_stack *s, t_stack *e, int p);
 int		stack_pop(t_push_swap *ps, t_stack *s, int pos);
 void	stack_free(t_push_swap *ps, t_stack *entry);
-void	stack_debug_print(t_stack *stack, int entries);
+void	stack_debug_print(t_push_swap *push_swap, t_stack *stack);
 
 typedef struct s_stack
 {

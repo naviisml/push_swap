@@ -22,8 +22,8 @@ int	main(int argc, char **args)
 {
 	t_push_swap	push_swap;
 	
-	(void)push_swap;
 	(void)argc;
 	(void)args;
+	stack_debug_print(push_swap, push_swap->stack_a);
 	return (0);
 }
