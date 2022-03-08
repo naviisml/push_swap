@@ -6,7 +6,7 @@
 /*   By: nismail <nismail@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/23 00:27:03 by nismail       #+#    #+#                 */
-/*   Updated: 2022/03/08 17:33:00 by navi          ########   odam.nl         */
+/*   Updated: 2022/03/08 18:07:45 by navi          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@
 typedef struct s_push_swap	t_push_swap;
 typedef struct s_stack		t_stack;
 
-int		stack_push(t_push_swap *push_swap, t_stack **stack, t_stack *entry);
-int		stack_pop(t_push_swap *ps, t_stack **s, int pos);
-void	stack_free(t_push_swap *ps, t_stack *entry);
+int		stack_push(t_push_swap *ps, t_stack **s, t_stack *e, int n);
 t_stack	*stack_create_item(int nbr);
+
 void	stack_debug_print(t_push_swap *push_swap, t_stack *stack);
-int		error(char *str)
+
+int		error(char *str);
 
 typedef struct s_stack
 {

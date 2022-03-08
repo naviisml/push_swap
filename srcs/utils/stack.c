@@ -6,7 +6,7 @@
 /*   By: navi <navi@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/03/06 13:52:24 by navi          #+#    #+#                 */
-/*   Updated: 2022/03/08 17:31:57 by navi          ########   odam.nl         */
+/*   Updated: 2022/03/08 18:07:34 by navi          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
  *
  * @return  int
  */
-int	stack_push(t_push_swap *push_swap, t_stack **stack, t_stack *entry)
+int	stack_push(t_push_swap *push_swap, t_stack **stack, t_stack *entry, int pos)
 {
 	t_stack	*last_item;
 	int		n;
@@ -34,17 +34,14 @@ int	stack_push(t_push_swap *push_swap, t_stack **stack, t_stack *entry)
 		}
 		else
 		{
-			n = push_swap->entries;
-			entry->next = *stack;
+			n = 0;
 			last_item = *stack;
-			while (n > 0)
+			while (n < (pos - 1) && n < push_swap->entries)
 			{
-				if (last_item->next)
-					last_item = last_item->next;
-				else
-					break ;
-				n--;
+				last_item = last_item->next;
+				n++;
 			}
+			entry->next = last_item->next;
 			last_item->next = entry;
 		}
 	}
@@ -53,23 +50,7 @@ int	stack_push(t_push_swap *push_swap, t_stack **stack, t_stack *entry)
 }
 
 /**
- * Remove the item on int pos from push_swap->stack
- *
- * @param   t_push_swap	push_swap
- * @param   int  		pos
- *
- * @return  int
- */
-int	stack_pop(t_push_swap *push_swap, t_stack **stack, int pos)
-{
-	(void)push_swap;
-	(void)stack;
-	(void)pos;
-	return (0);
-}
-
-/**
- * Create a new t_stack struct
+ * Create and return a new t_stack item
  *
  * @param   int      nbr
  *
