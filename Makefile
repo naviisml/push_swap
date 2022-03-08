@@ -60,7 +60,7 @@ clean:
 # Remove the `object` and `build` folder and files...
 fclean: clean
 	@$(MAKE) fclean -C $(LIBFT_FOLDER)
-	@rm -rf $(NAME)
+	@rm -rf $(NAME) $(BUILD_FOLDER)
 
 # Clean the program up and re-compile it...
 re: fclean all
